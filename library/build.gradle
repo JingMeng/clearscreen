@@ -1,12 +1,17 @@
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 29
+    namespace 'com.lmx.library.widget'
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+    compileSdk 34
 
 
     defaultConfig {
-        minSdkVersion 14
-        targetSdkVersion 29
+        minSdk 14
+        targetSdk 34
         versionCode 1
         versionName "1.0"
 
@@ -19,6 +24,7 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+    
     }
 
 }
@@ -28,15 +34,7 @@ dependencies {
 }
 
 
-apply plugin: 'com.novoda.bintray-release'
 
-publish {
-    userOrg = 'lmxjw3' // 用户名
-    repoName = 'maven' // 仓库名
-    groupId = 'com.lmxjw3.widget'
-    artifactId = 'clearscreen'
-    publishVersion = '1.0.0'
-    desc = '直播间左滑或右滑清屏控件'
-    website = 'https://github.com/lmxjw3/clearscreen'
-    dryRun = false
-}
+
+
+

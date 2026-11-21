@@ -1,11 +1,16 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 29
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+    namespace 'com.lmx.clearscreenapp'
+    compileSdk 34
     defaultConfig {
         applicationId "com.lmx.clearscreenapp"
-        minSdkVersion 15
-        targetSdkVersion 29
+        minSdk 15
+        targetSdk 34
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -15,6 +20,7 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+    
     }
 }
 
@@ -23,3 +29,7 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation project(path: ':library')
 }
+
+
+
+
